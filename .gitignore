@@ -1,0 +1,44 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# General
+# Mac and Windows system files
+.DS_Store
+Thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#----------------------------------------------------------------
+# SERVER
+#----------------------------------------------------------------
+# Server dependencies
+/server/node_modules
+
+# Environment variables - DO NOT COMMIT THESE
+/server/.env
+
+
+#----------------------------------------------------------------
+# CLIENT
+#----------------------------------------------------------------
+# Client dependencies
+/client/node_modules
+/client/.pnp
+/client/.pnp.js
+
+# Production build folder
+/client/build
+
+# Testing
+/client/coverage
+
+# Misc
+/client/.DS_Store
+
+# Environment variables
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local

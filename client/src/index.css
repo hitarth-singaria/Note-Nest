@@ -1,0 +1,398 @@
+/* client/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #6c5ce7;
+  --secondary-color: #a29bfe;
+  --background-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --text-color: #2d3436;
+  --text-secondary-color: #636e72;
+  --border-color: #dfe6e9;
+  --danger-color: #d63031;
+  --success-color: #00b894;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Calmer Animated Gradient Background --- */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  /* Applying the new, calmer animated gradient */
+  background: linear-gradient(-45deg, #b2eBF2, #a29bfe, #74b9ff, #81ecec);
+  background-size: 400% 400%;
+  animation: gradientAnimation 18s ease infinite;
+}
+/* --- End of Animated Background --- */
+
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* New style to center the auth forms on the page */
+.page-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px); /* Full viewport height minus header */
+}
+
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent header */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+.header ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 15px;
+}
+
+.header a {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header a:hover {
+  color: var(--primary-color);
+}
+
+.logo a {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Landing Page Hero Section */
+.hero {
+  text-align: center;
+  padding: 6rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--surface-color);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--surface-color);
+    margin-bottom: 2rem;
+}
+
+.hero .intro-text {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #eee;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+
+/* General Button Style */
+.btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #5847d8;
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+/* Form Styles */
+.form-container {
+    background: var(--surface-color);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 500px; /* Increased max-width slightly */
+    margin: 2rem auto; /* Ensures horizontal centering */
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-top: 2rem; /* Added padding from top bar */
+}
+
+.heading h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.heading p {
+  color: var(--text-secondary-color);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-control, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--background-color);
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Notes, Modals, Profile Menu, and other styles */
+.profile-menu {
+  position: relative;
+  margin-left: 20px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  width: 220px;
+  z-index: 100;
+  border: 1px solid var(--border-color);
+}
+
+.dropdown-menu h4 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+
+.dropdown-menu p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+}
+
+.dropdown-menu hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1rem 0;
+}
+
+textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.content {
+  text-align: center;
+}
+
+/* Added margin to the h3 inside .content */
+.content h3 {
+  margin-top: 2rem;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.note {
+  background: var(--surface-color);
+  margin: 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-date {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 10px;
+}
+
+.note h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.note p {
+  flex-grow: 1;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-secondary-color);
+  transition: fill 0.2s ease-in-out;
+}
+
+.icon-btn:hover svg {
+  fill: var(--primary-color);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-content .form-group textarea {
+  height: 250px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
